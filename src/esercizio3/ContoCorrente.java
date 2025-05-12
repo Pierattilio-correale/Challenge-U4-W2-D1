@@ -17,11 +17,11 @@ try {
     if (nMovimenti < maxMovimenti) saldo = saldo - x;
     else saldo = saldo - x - 0.50;
 
-
+    nMovimenti++;
     if(saldo<=0){
         throw new BancaException("il conto è in rosso");
     }
-    nMovimenti++;
+
 }catch (BancaException e){
     System.out.println(e.getMessage());
 }

@@ -1,9 +1,10 @@
 package esercizio1;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-;
+
 
 public class RandomArray {
     public static void main(String[] args) {
@@ -18,8 +19,11 @@ public class RandomArray {
         System.out.println(Arrays.toString(provaArray));
 
         int sceltaPosizione;
-
+        try {
         while (true){
+
+
+
             System.out.println("inserisci valore della posizione da 1 a 5 per popolare l'array e 0 per visualizzarlo");
        sceltaPosizione = scanner.nextInt();
             switch (sceltaPosizione){
@@ -66,7 +70,10 @@ public class RandomArray {
         for (int i=0 ; i<provaArray.length; i++){
             System.out.print(provaArray[i]+" ");
         }
-
+        }catch (InputMismatchException e){
+            System.out.println("il valore è "+e.getMessage());
+        }
 
     }
 }
+

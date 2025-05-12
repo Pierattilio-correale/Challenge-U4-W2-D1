@@ -10,6 +10,7 @@ try {
 
     System.out.println(e.getMessage());
 }
+        System.out.println(conto.getnMovimenti());
 ContoOnLine contoOn = new ContoOnLine("Luca", 22000 , 20000 );
 try {
     contoOn.preleva(21000);
