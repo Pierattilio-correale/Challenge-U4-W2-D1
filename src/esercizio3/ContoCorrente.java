@@ -12,10 +12,52 @@ public class ContoCorrente {
         this.nMovimenti = 0;
     }
 
-    public void preleva(double x) {
-        if (nMovimenti < maxMovimenti) saldo = saldo - x;
-        else saldo = saldo - x - 0.50;
-        nMovimenti++;
+    public void preleva(double x) throws BancaException {
+try {
+    if (nMovimenti < maxMovimenti) saldo = saldo - x;
+    else saldo = saldo - x - 0.50;
+
+
+    if(saldo<=0){
+        throw new BancaException("il conto è in rosso");
+    }
+    nMovimenti++;
+}catch (BancaException e){
+    System.out.println(e.getMessage());
+}
+
+
+
+    }
+
+
+
+    public String getTitolare() {
+        return titolare;
+    }
+
+    public void setTitolare(String titolare) {
+        this.titolare = titolare;
+    }
+
+    public int getnMovimenti() {
+        return nMovimenti;
+    }
+
+    public void setnMovimenti(int nMovimenti) {
+        this.nMovimenti = nMovimenti;
+    }
+
+    public int getMaxMovimenti() {
+        return maxMovimenti;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 
     public double restituisciSaldo() {
